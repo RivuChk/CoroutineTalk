@@ -1,5 +1,6 @@
 import kotlinx.coroutines.experimental.async
 import kotlinx.coroutines.experimental.delay
+import kotlinx.coroutines.experimental.launch
 import kotlinx.coroutines.experimental.runBlocking
 import kotlin.system.measureTimeMillis
 
@@ -19,7 +20,7 @@ suspend fun longRunningTaskMeasure() = measureTimeMillis {
 }
 
 fun main(args: Array<String>) {
-    async {
+    launch {
         val str = longRunningTask()
         println(str)
         println(longRunningTaskMeasure())

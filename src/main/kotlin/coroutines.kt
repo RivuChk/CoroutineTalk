@@ -1,12 +1,9 @@
-import kotlinx.coroutines.experimental.CommonPool
-import kotlinx.coroutines.experimental.async
-import kotlinx.coroutines.experimental.delay
-import kotlinx.coroutines.experimental.runBlocking
+import kotlinx.coroutines.experimental.*
 import kotlin.coroutines.experimental.CoroutineContext
 
 
 fun main(args: Array<String>) {
-    async(CommonPool) {
+    launch(CommonPool) {
         println("coroutine running")
         runBlocking { delay(1000) }
         println("coroutine completed")
